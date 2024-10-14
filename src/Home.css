@@ -1,0 +1,31 @@
+
+.custom-container {
+    background-color: #d59db9;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.custom-card {
+    box-shadow: 0 2px 4px rgba(229, 100, 163, 0.89);
+    border-radius: 30px;
+    border: navy;
+}
+
+
+.navbar-custom {
+  background-color: rgb(239, 152, 167);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: rgb(250, 246, 246); /* Color de texto blanco para contraste */
+}
+
+.btn-register:hover {
+    background-color: rgb(228, 102, 123); /* Fondo rosa al pasar el mouse */
+    color: #3c0521; /* Texto blanco */
+    border: 1px solid rgb(244, 159, 173); /* Borde rosa */
+}
+.navbar-custom .nav-link:hover {
+    color: #e2117a; /* Cambia el color al hacer hover */
+}
