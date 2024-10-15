@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Card, Container, Navbar, Nav, Form, Button, Modal } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Routes, Link, } from 'react-router-dom';  // Importa los componentes de enrutamiento
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './Home.css';
+import CentrosDeAyuda from './CentrosDeAyuda';  // Importa el componente correctamente
 
 const Home = () => {
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    // Estados para el registro
     const [showRegisterModal, setShowRegisterModal] = useState(false);
     const [registerUsername, setRegisterUsername] = useState('');
     const [registerEmail, setRegisterEmail] = useState('');
@@ -31,20 +30,20 @@ const Home = () => {
                 {/* Navbar */}
                 <Navbar className="navbar-custom" variant="light">
                     <Container>
-                        <Navbar.Brand as={Link} to="/">Inicio</Navbar.Brand> {/* Cambiamos el href por Link */}
+                        <Navbar.Brand as={Link} to="/">Inicio</Navbar.Brand>
                         <Nav className="me-auto">
-                            <Nav.Link className="nav-link-register" onClick={() => setShowRegisterModal(true)}>
+                            <Nav.Link onClick={() => setShowRegisterModal(true)}>
                                 Regístrate
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/centros-ayuda">Centros de ayuda</Nav.Link> {/* Link para Centros de Ayuda */}
+                            <Nav.Link as={Link} to="/centros-ayuda">Centros de ayuda</Nav.Link>
                             <Nav.Link href="#Profesionales">Profesionales</Nav.Link>
                         </Nav>
                     </Container>
                 </Navbar>
 
-                {/* Contenedor principal */}
                 <Container className="custom-container mt-3">
                     <Routes>
+                        {/* Ruta para la página principal (inicio de sesión) */}
                         <Route path="/" element={
                             <Card className="custom-card">
                                 <Card.Body>
@@ -53,44 +52,46 @@ const Home = () => {
                                         Ingresa tu caso y nosotros te ayudaremos lo más pronto posible.
                                     </Card.Text>
                                 </Card.Body>
+
+                                {/* Formulario de Inicio de Sesión */}
+                                <Card className="mt-3">
+                                    <Card.Body>
+                                        <Card.Title>Inicia Sesión</Card.Title>
+                                        <Form onSubmit={handleLoginSubmit}>
+                                            <Form.Group controlId="formUsername">
+                                                <Form.Label>Nombre de Usuario</Form.Label>
+                                                <Form.Control
+                                                    type="text"
+                                                    placeholder="No ingreses tu nombre real"
+                                                    value={username}
+                                                    onChange={(e) => setUsername(e.target.value)}
+                                                    required
+                                                />
+                                            </Form.Group>
+
+                                            <Form.Group controlId="formPassword" className="mt-3">
+                                                <Form.Label>Contraseña</Form.Label>
+                                                <Form.Control
+                                                    type="password"
+                                                    placeholder="Ingresa tu contraseña"
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                    required
+                                                />
+                                            </Form.Group>
+
+                                            <Button style={{ backgroundColor: 'pink', color: 'white', border: 'none' }} type="submit">
+                                                Iniciar Sesión
+                                            </Button>
+                                        </Form>
+                                    </Card.Body>
+                                </Card>
                             </Card>
                         } />
-                        <Route path="/centros-ayuda" element={<CentrosAyuda />} /> {/* Ruta para Centros de Ayuda */}
+
+                        {/* Ruta para la página de Centros de Ayuda */}
+                        <Route path="/centros-ayuda" element={<CentrosDeAyuda />} />  {/* Mostrar solo el componente CentrosDeAyuda */}
                     </Routes>
-
-                    {/* Formulario de Inicio de Sesión */}
-                    <Card className="mt-3">
-                        <Card.Body>
-                            <Card.Title>Inicia Sesión</Card.Title>
-                            <Form onSubmit={handleLoginSubmit}>
-                                <Form.Group controlId="formUsername">
-                                    <Form.Label>Nombre de Usuario</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        placeholder="No ingreses tu nombre real"
-                                        value={username}
-                                        onChange={(e) => setUsername(e.target.value)}
-                                        required
-                                    />
-                                </Form.Group>
-
-                                <Form.Group controlId="formPassword" className="mt-3">
-                                    <Form.Label>Contraseña</Form.Label>
-                                    <Form.Control
-                                        type="password"
-                                        placeholder="Ingresa tu contraseña"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        required
-                                    />
-                                </Form.Group>
-
-                                <Button style={{ backgroundColor: 'pink', color: 'white', border: 'none' }} type="submit">
-                                    Iniciar Sesión
-                                </Button>
-                            </Form>
-                        </Card.Body>
-                    </Card>
                 </Container>
 
                 {/* Modal de Registro */}
@@ -143,19 +144,5 @@ const Home = () => {
         </Router>
     );
 };
-
-// Componente para la sección de "Centros de Ayuda"
-const CentrosAyuda = () => (
-    <Container className="mt-3">
-        <Card>
-            <Card.Body>
-                <Card.Title>Centros de Ayuda</Card.Title>
-                <Card.Text>
-                    Aquí encontrarás una lista de los centros de ayuda disponibles.
-                </Card.Text>
-            </Card.Body>
-        </Card>
-    </Container>
-);
 
 export default Home;
