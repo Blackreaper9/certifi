@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Card, Container, Navbar, Nav, Form, Button, Modal } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './Home.css';
-import CentrosDeAyuda from './CentrosDeAyuda';  // Importa el componente correctamente
+import CentrosDeAyuda from './CentrosDeAyuda';  // Importa el componente CentrosDeAyuda
+import Profesionales from './Profesionales';    // Importa el componente Profesionales
+import logo from './assets/ciberbloxlogo.png';  // Ruta correcta
 
 const Home = () => {
     const [username, setUsername] = useState('');
@@ -30,13 +32,14 @@ const Home = () => {
                 {/* Navbar */}
                 <Navbar className="navbar-custom" variant="light">
                     <Container>
+                    <img src={logo} alt="ciberbloxlogo.png" style={{ width: '150px', marginRight: '20px' }} />  {}
                         <Navbar.Brand as={Link} to="/">Inicio</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link onClick={() => setShowRegisterModal(true)}>
                                 Regístrate
                             </Nav.Link>
                             <Nav.Link as={Link} to="/centros-ayuda">Centros de ayuda</Nav.Link>
-                            <Nav.Link href="#Profesionales">Profesionales</Nav.Link>
+                            <Nav.Link as={Link} to="/profesionales">Profesionales</Nav.Link>  {/* Nuevo link para Profesionales */}
                         </Nav>
                     </Container>
                 </Navbar>
@@ -90,7 +93,10 @@ const Home = () => {
                         } />
 
                         {/* Ruta para la página de Centros de Ayuda */}
-                        <Route path="/centros-ayuda" element={<CentrosDeAyuda />} />  {/* Mostrar solo el componente CentrosDeAyuda */}
+                        <Route path="/centros-ayuda" element={<CentrosDeAyuda />} />
+
+                        {/* Ruta para la página de Profesionales */}
+                        <Route path="/profesionales" element={<Profesionales />} />  {/* Nueva ruta para Profesionales */}
                     </Routes>
                 </Container>
 
