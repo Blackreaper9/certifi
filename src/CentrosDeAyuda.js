@@ -12,7 +12,7 @@ const CentrosDeAyuda = () => {
                     <Card.Text className="text-center" style={{ fontStyle: 'italic', color: '#555' }}>
                         Aquí encontrarás información sobre centros de ayuda para mujeres en situaciones de violencia.
                     </Card.Text>
-
+                    <Card/>
                     <ListGroup variant="flush">
                         <ListGroup.Item>
                             <strong style={{ color: '#ff4081' }}>Instituto Nacional de las Mujeres (INMUJERES)</strong><br />
