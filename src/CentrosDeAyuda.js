@@ -49,10 +49,28 @@ const CentrosDeAyuda = () => {
                         <ListGroup.Item>
                             <strong style={{ color: '#ff4081' }}>Línea de la Mujer</strong><br />
                             Descripción: Línea telefónica de atención inmediata para mujeres que sufren violencia o acoso.<br />
-                            <strong>¿Cómo ayuda?
-                                </strong> Ofrecen orientación psicológica de emergencia y ayudan a las mujeres a planificar su seguridad. También brindan información sobre cómo acceder a refugios y apoyo legal en casos de violencia doméstica.<br />
+                            <strong>¿Cómo ayuda?</strong> Ofrecen orientación psicológica de emergencia y ayudan a las mujeres a planificar su seguridad. También brindan información sobre cómo acceder a refugios y apoyo legal en casos de violencia doméstica.<br />
                             Teléfono: 55 5658 1111
                         </ListGroup.Item>
+
+                        <ListGroup.Item>
+                            <strong style={{ color: '#ff4081' }}>Centro de Justicia para Mujeres (Fiscalía)</strong><br />
+                            Descripción: Es una institución que brinda apoyo y servicio integral a las mujeres aguascalentenses así como a sus hijos e hijas que han sido víctimas de los delitos relacionados con la violencia de género.<br />
+                            <strong>¿Cómo ayuda?
+                            </strong> El Centro de Justicia para Mujeres busca evitar la re-victimización proporcionando a las usuarias las herramientas necesarias para que trasciendan de un estado de víctima, a ser AGENTES PROMOTORAS DE PAZ en su comunidad.<br />
+                            Página web: <a href="https://www.fiscalia-aguascalientes.gob.mx/Centro_de_Justicia_para_las_Mujeres.aspx" target="_blank" rel="noopener noreferrer">https://www.fiscalia-aguascalientes.gob.mx/Centro_de_Justicia_para_las_Mujeres.aspx</a><br />
+                            Teléfono: (01 449) 9-74-82-31
+                        </ListGroup.Item>
+
+                        <ListGroup.Item>
+                            <strong style={{ color: '#ff4081' }}>Función de la dependencia (Instituto Municipal de la Mujer de Aguascalientes)</strong><br />
+                            Descripción: Promover los principios rectores de acceso de todas las mujeres a una vida libre de violencia; igualdad jurídica entre las mujeres y el hombre; el respeto a la dignidad Humana de las mujeres; la no discriminación y la libertad de las mujeres.<br />
+                            <strong>¿Cómo ayuda?
+                            </strong>Se brinda apoyo integral en casos de violencia.<br />
+                            Página web: <a href="https://www.ags.gob.mx/cont.aspx?p=4829" target="_blank" rel="noopener noreferrer">https://www.ags.gob.mx/cont.aspx?p=4829</a><br />
+                            Teléfono: (449) 978-95-92
+                        </ListGroup.Item>
+
                     </ListGroup>
                 </Card.Body>
             </Card>
